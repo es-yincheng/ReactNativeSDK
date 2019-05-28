@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   s.default_subspec         = ['React']
 
     s.subspec "React" do |ss|
-      ss.dependency  "React" , :path => './node_modules/react-native'
+      ss.dependency  "React" #, :path => './node_modules/react-native'
     end
 
   # s.resource_bundles = {
