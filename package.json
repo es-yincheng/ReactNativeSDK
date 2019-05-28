@@ -1,7 +1,8 @@
 {
   "name": "MyReactNativeApp",
   "version": "0.0.1",
-  "private": true,
+  "description": "A framework for building native apps using React",
+  "license": "MIT",
   "scripts": {
     "start": "yarn react-native start"
   },
