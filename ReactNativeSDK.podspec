@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReactNativeSDK'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of ReactNativeSDK.'
+  s.version          = '0.0.1'
+  s.summary          = 'This is ReactNativeSDK.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,20 +18,26 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  ReactNativeSDK for ios project,you can use it by pod.
                        DESC
 
-  s.homepage         = 'https://github.com/yc/ReactNativeSDK'
+  s.homepage         = 'https://github.com/es-yincheng/ReactNativeSDK.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yc' => 'cheng.yin@ymm56.com' }
-  s.source           = { :git => 'https://github.com/yc/ReactNativeSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/es-yincheng/ReactNativeSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.source_files = 'ReactNativeSDK/Classes/**/*'
+  # s.source_files = 'ReactNativeSDK/Classes/**/*'
   
+  s.default_subspec         = ['React']
+
+    s.subspec "React" do |ss|
+      ss.dependency  "React" , :path => './node_modules/react-native'
+    end
+
   # s.resource_bundles = {
   #   'ReactNativeSDK' => ['ReactNativeSDK/Assets/*.png']
   # }
@@ -39,4 +45,35 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+
+  # s.subspec 'React' do |ss|
+  #   ss.dependency 'React', :path => './node_modules/react-native'
+  # end
+
+  # s.subspec 'yoga' do |ss|
+  #   ss.dependency 'React', :path => './node_modules/react-native/ReactCommon/yoga'
+  # end
+
+  # s.subspec 'React' do |ss|
+  #   ss.dependency 'React', :path => './node_modules/react-native'
+  # end
+
+  # s.subspec 'React' do |ss|
+  #   ss.dependency 'React', :path => './node_modules/react-native'
+  # end
+
+  # s.subspec 'Network' do |ss|
+  #   ss.source_files = 'YMMNetwork/Classes/**/*.{h,m}'
+  #   ss.resources    = 'YMMNetwork/Assets/*'
+  #   ss.vendored_frameworks = ['YMMNetwork/MyFramework/*.framework']
+  #   ss.dependency 'AFNetworking', '3.1.0'
+  #   ss.dependency 'YMMUtilsLib'
+  #   ss.dependency 'YMMStorage'
+  #   ss.dependency 'YMMDataCenter'
+  #   ss.dependency 'YMMLogLib'
+  #   ss.dependency 'YMMSchemeRouter'
+  #   ss.dependency 'YMMJournal'
+  # end
+
 end

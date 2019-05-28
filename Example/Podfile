@@ -1,16 +1,27 @@
 use_frameworks!
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'ReactNativeSDK_Example' do
   pod 'ReactNativeSDK', :path => '../'
 
+  # 'node_modules'目录一般位于根目录中
+  # 但是如果你的结构不同，那你就要根据实际路径修改下面的`:path`
+#  pod 'React', :path => '../node_modules/react-native'
+  # 如果你的RN版本 >= 0.42.0，则加入下面这行
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+
+  # 如果RN版本 >= 0.45则加入下面三个第三方编译依赖
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
   target 'ReactNativeSDK_Tests' do
     inherit! :search_paths
 
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
+    # pod 'Specta'
+    # pod 'Expecta'
+    # pod 'FBSnapshotTestCase'
+    # pod 'Expecta+Snapshots'
   end
 end
