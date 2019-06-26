@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReactNativeSDK'
-  s.version          = '0.0.1'
+  s.version          = '0.0.1.2'
   s.summary          = 'This is ReactNativeSDK.'
 
 # This description is used to generate tags and improve search results.
@@ -30,50 +30,10 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  # s.source_files = 'ReactNativeSDK/Classes/**/*'
-  
   s.default_subspec         = ['React']
 
     s.subspec "React" do |ss|
-      ss.dependency  "React" #, :path => './node_modules/react-native'
+      ss.dependency  "React" 
     end
-
-  # s.resource_bundles = {
-  #   'ReactNativeSDK' => ['ReactNativeSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
-
-
-  # s.subspec 'React' do |ss|
-  #   ss.dependency 'React', :path => './node_modules/react-native'
-  # end
-
-  # s.subspec 'yoga' do |ss|
-  #   ss.dependency 'React', :path => './node_modules/react-native/ReactCommon/yoga'
-  # end
-
-  # s.subspec 'React' do |ss|
-  #   ss.dependency 'React', :path => './node_modules/react-native'
-  # end
-
-  # s.subspec 'React' do |ss|
-  #   ss.dependency 'React', :path => './node_modules/react-native'
-  # end
-
-  # s.subspec 'Network' do |ss|
-  #   ss.source_files = 'YMMNetwork/Classes/**/*.{h,m}'
-  #   ss.resources    = 'YMMNetwork/Assets/*'
-  #   ss.vendored_frameworks = ['YMMNetwork/MyFramework/*.framework']
-  #   ss.dependency 'AFNetworking', '3.1.0'
-  #   ss.dependency 'YMMUtilsLib'
-  #   ss.dependency 'YMMStorage'
-  #   ss.dependency 'YMMDataCenter'
-  #   ss.dependency 'YMMLogLib'
-  #   ss.dependency 'YMMSchemeRouter'
-  #   ss.dependency 'YMMJournal'
-  # end
 
 end
